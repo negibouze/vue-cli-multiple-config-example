@@ -31,6 +31,57 @@
   -webkit-font-smoothing: antialiased
   -moz-osx-font-smoothing: grayscale
 
+.flex
+  display: flex
+  flex-direction: column
+  flex-wrap: nowrap
+  align-items: stretch
+  justify-content: flex-start
+
+.site-frame
+  width: 100%
+  height: 100%
+
+.site-header
+  flex-grow: 0
+  flex-basis: 100px
+  width: 100%
+  min-height: 100px
+  background-color: #ccc
+
+.site-footer
+  flex-grow: 0
+  flex-basis: 60px
+  width: 100%
+  min-height: 60px
+  background-color: #ccc
+
+.content-frame
+  flex-grow: 1
+  width: 100%
+
+.content-frame.flex
+  flex-direction: row
+
+.content-menu
+  flex-grow: 0
+  flex-shrink: 0
+  flex-basis: 200px
+  background-color: #ddd
+
+.content-body
+  flex-grow: 1
+  flex-shrink: 1
+  min-width: 0
+  padding: 0 0 0 15px
+  background-color: #eee
+  overflow: scroll
+
+.no-bullet
+  list-style:none
+  margin: 0
+  padding: 0
+
 .menu-list-item
   width: 100%
   height: 50px
