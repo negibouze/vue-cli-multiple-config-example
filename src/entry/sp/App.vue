@@ -1,31 +1,58 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+  <div id="app" class="site-frame flex">
+    <header class="site-header">
+      ヘッダー
+    </header>
+    <div class="content-frame flex">
+      <main class="content-body" role="main">
+        <keep-alive>
+          <router-view />
+        </keep-alive>
+      </main>
+      <nav class="content-menu" role="navigation">
+        <div class="menu-item">
+          <router-link to="/">Home</router-link>
+        </div>
+        <div class="menu-item">
+          <router-link to="/about">About</router-link>
+        </div>
+      </nav>
     </div>
-    <router-view/>
+    <footer class="site-footer">
+      フッター
+    </footer>
   </div>
 </template>
 
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-#nav {
-  padding: 30px;
-}
+<style lang="stylus" scoped>
+$menu-height=40px
 
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
+#app
+  -webkit-font-smoothing: antialiased
+  -moz-osx-font-smoothing: grayscale
 
-#nav a.router-link-exact-active {
-  color: #42b983;
-}
+.content-menu
+  display: flex
+  flex-wrap: nowrap
+  align-items: stretch
+  justify-content: center
+  width: 100%
+  background-color: #ddd
+  height: $menu-height
+
+.menu-item
+  flex-grow: 1
+  height: 100%
+  line-height: $menu-height
+  text-align: center
+  > a
+    display: block
+    width: 100%
+    height: 100%
+    text-decoration: none
+    color: #2c3e50
+    &.router-link-exact-active
+      font-weight: bold
+      background-color: #eee
+      color: #42b983
 </style>
